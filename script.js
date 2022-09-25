@@ -287,8 +287,8 @@ function addNoteActions() {
         loadingGif.style.display = "flex";
         setTimeout(() => {
           loadingGif.style.display = "none";
+          const currentNote = noteObject.removeNote(noteId);
         }, 300);
-        const currentNote = noteObject.removeNote(noteId);
       });
     }
   );
