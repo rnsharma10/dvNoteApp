@@ -57,13 +57,13 @@ const noteObject = {
     let index = -1;
     this.noteList.forEach((note) => {
       index += 1;
-      console.log(index);
+      // console.log(index);
       if (note.id == id) {
         note.content = noteContent;
         (note.unFormattedContent = noteContent2), //.replace(/(\r\n|\n|\r)/gm, "");
-          console.log(`this is whre change is done ${index}`);
-        this.noteList.unshift(...this.noteList.splice(index, 1));
-        console.log(this.noteList);
+          // console.log(`this is whre change is done ${index}`);
+          this.noteList.unshift(...this.noteList.splice(index, 1));
+        // console.log(this.noteList);
       }
     });
     this.reRenderList();
@@ -71,7 +71,7 @@ const noteObject = {
 
   //re-render the note list, ofcourse it will still be hidden if you were editing note
   reRenderList: function () {
-    console.log("rendering list");
+    // console.log("rendering list");
     const ulElement = document.getElementById("note-list-ul");
     const childItems = [];
     //recreating children nodes dom elements of note list
@@ -138,7 +138,7 @@ const noteObject = {
         currentHeader,
         currentNoteDesc,
       ]);
-      console.log(`print id ${currentEdit.parentNode.parentNode.id}`);
+      // console.log(`print id ${currentEdit.parentNode.parentNode.id}`);
       childItems.push(currentli);
     }
     // resetting note ul and adding li children array
@@ -174,7 +174,7 @@ window.onload = function () {
   noteSaveBtn.addEventListener("click", () => {
     // is it new note or existing note
     let currentId = document.getElementsByClassName("noteBody")[0].id;
-    console.log(currentId);
+    // console.log(currentId);
     let noteInfo = ["", 0];
     if (currentId) {
       noteInfo = ["existing", currentId];
@@ -216,7 +216,7 @@ window.onload = function () {
   //delete note
   noteDeleteBtn.addEventListener("click", () => {
     let currentId = document.getElementsByClassName("noteBody")[0].id;
-    console.log(currentId);
+    // console.log(currentId);
     if (currentId) {
       noteObject.removeNote(currentId);
       renderNoteBody();
@@ -238,7 +238,7 @@ window.onload = function () {
 
   //if tab is pressed in note edit field
   fakeTextArea.addEventListener("keydown", (e) => {
-    console.log(e.key);
+    // console.log(e.key);
     if (e.keyCode == 9) {
       e.preventDefault();
       //add tab
