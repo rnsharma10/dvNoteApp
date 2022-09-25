@@ -112,16 +112,27 @@ const noteObject = {
         "domelement",
         [currentTitle, currentEdit, currentDelete]
       );
-      // note body  but partially visible
-      const currentNoteDesc = createDomElement(
+
+      //note inner body but partially visible
+      const currentInnerNoteDesc = createDomElement(
         "div",
-        "noteDesc pd-10".split(" "),
+        ["noteInnerDesc"],
         "",
         "innerText",
         this.noteList[i].unFormattedContent.length > 300
           ? this.noteList[i].unFormattedContent.slice(0, 300) + " ..."
           : this.noteList[i].unFormattedContent
       );
+
+      // note body
+      const currentNoteDesc = createDomElement(
+        "div",
+        "noteDesc pd-10".split(" "),
+        "",
+        "domelement",
+        [currentInnerNoteDesc]
+      );
+
       // list element of note
       const currentli = createDomElement("li", [], "", "domelement", [
         currentHeader,

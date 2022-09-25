@@ -164,8 +164,15 @@ body{
 .noteDesc {
   min-height: 200px;
   max-height: 220px;
+  padding: 10px;
   word-wrap: normal;
-  white-space: nowrap;
+  /* white-space: nowrap; */
+  overflow:hidden;
+}
+
+.noteInnerDesc {
+  min-height: 200px;
+  max-height: 220px;
   overflow:hidden;
   text-overflow: ellipsis;
 }
@@ -204,7 +211,7 @@ body{
   border-radius: 5px;
   height: 200px;
   text-overflow: clip;
-  overflow-y: scroll;
+  overflow-y: auto;
   padding: 10px;
 }
 
