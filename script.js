@@ -262,8 +262,8 @@ window.onload = function () {
 };
 
 function addNoteActions() {
-  const noteListSection = document.getElementById("note-list-section");
-  const noteEditSection = document.getElementById("note-edit-section");
+  // const noteListSection = document.getElementById("note-list-section");
+  // const noteEditSection = document.getElementById("note-edit-section");
   Array.prototype.forEach.call(
     document.getElementsByClassName("note-list-edit"),
     (el) => {
@@ -283,6 +283,11 @@ function addNoteActions() {
     (el) => {
       el.addEventListener("click", () => {
         const noteId = el.parentNode.parentNode.id;
+        const loadingGif = document.getElementById("loading");
+        loadingGif.style.display = "flex";
+        setTimeout(() => {
+          loadingGif.style.display = "none";
+        }, 300);
         const currentNote = noteObject.removeNote(noteId);
       });
     }
@@ -363,8 +368,11 @@ function getSelectedText() {
 function showHideEditListDiv(editDiv, listDiv) {
   const noteListSection = document.getElementById("note-list-section");
   const noteEditSection = document.getElementById("note-edit-section");
+  const loadingGif = document.getElementById("loading");
+  loadingGif.style.display = "flex";
   setTimeout(() => {
     noteEditSection.style.display = editDiv;
     noteListSection.style.display = listDiv;
-  }, 100);
+    loadingGif.style.display = "none";
+  }, 300);
 }
