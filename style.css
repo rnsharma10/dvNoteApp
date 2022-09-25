@@ -92,6 +92,12 @@
   transition: font-weight 1s ease-out;
 }
 
+.noteHeader i:active{
+  font-weight: 1000;
+  cursor: pointer;
+  transition: font-weight 1s ease-out;
+}
+
 body{
   box-sizing: border-box;
   
@@ -213,7 +219,8 @@ body{
   font-weight: 700;
 }
 
-@media (max-width:1100px) {
+@media screen and (max-width:1100px) {
+
   .noteListUL{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -221,5 +228,9 @@ body{
 
   .noteHeader{
     height: 40px;
+  }
+
+  .noteEditBodyTextArea #fake-textarea{
+    margin-top: 30px !important;
   }
 }

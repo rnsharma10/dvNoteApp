@@ -152,8 +152,9 @@ window.onload = function () {
   createNoteBtn.addEventListener("click", () => {
     renderNoteBody();
     fakeTextArea.focus();
-    noteEditSection.style.display = "block";
-    noteListSection.style.display = "none";
+    showHideEditListDiv("block", "none");
+    // noteEditSection.style.display = "block";
+    // noteListSection.style.display = "none";
   });
 
   addNoteActions();
@@ -206,8 +207,9 @@ window.onload = function () {
       noteObject.removeNote(currentId);
       renderNoteBody();
       // showBanner("Note removed.");
-      noteEditSection.style.display = "none";
-      noteListSection.style.display = "block";
+      showHideEditListDiv("none", "block");
+      // noteEditSection.style.display = "none";
+      // noteListSection.style.display = "block";
     } else {
       showBanner("Can't delete new note.", "error");
     }
@@ -215,8 +217,9 @@ window.onload = function () {
 
   // go back to note list
   allNotesLink.addEventListener("click", () => {
-    noteEditSection.style.display = "none";
-    noteListSection.style.display = "block";
+    showHideEditListDiv("none", "block");
+    // noteEditSection.style.display = "none";
+    // noteListSection.style.display = "block";
   });
 
   // note actions
@@ -268,8 +271,9 @@ function addNoteActions() {
         const noteId = el.parentNode.parentNode.id;
         const currentNote = noteObject.getNote(noteId);
         renderNoteBody(currentNote);
-        noteEditSection.style.display = "block";
-        noteListSection.style.display = "none";
+        showHideEditListDiv("block", "none");
+        // noteEditSection.style.display = "block";
+        // noteListSection.style.display = "none";
       });
     }
   );
@@ -354,4 +358,13 @@ function showBanner(actionPerformed, msgType = "info") {
 function getSelectedText() {
   const selectedText = window.getSelection();
   return selectedText.toString();
+}
+
+function showHideEditListDiv(editDiv, listDiv) {
+  const noteListSection = document.getElementById("note-list-section");
+  const noteEditSection = document.getElementById("note-edit-section");
+  setTimeout(() => {
+    noteEditSection.style.display = editDiv;
+    noteListSection.style.display = listDiv;
+  }, 100);
 }
