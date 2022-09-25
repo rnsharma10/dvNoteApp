@@ -213,11 +213,13 @@ body{
   text-overflow: clip;
   overflow-y: auto;
   padding: 10px;
+  white-space: pre;
 }
 
 .noteEditBodyTextArea #fake-textarea:focus{
   box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
-  transition: box-shadow ;
+  transition: box-shadow .2s ease-out;
+  /* white-space: pre; */
 }
 
 #bannerMessage{

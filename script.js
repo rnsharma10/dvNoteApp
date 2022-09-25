@@ -162,8 +162,8 @@ window.onload = function () {
   //create note button
   createNoteBtn.addEventListener("click", () => {
     renderNoteBody();
-    fakeTextArea.focus();
     showHideEditListDiv("block", "none");
+
     // noteEditSection.style.display = "block";
     // noteListSection.style.display = "none";
   });
@@ -183,13 +183,16 @@ window.onload = function () {
       noteInfo = ["new", noteObject.latestId];
     }
 
+    //if empty note then dont save
+    if (!fakeTextArea.innerText || fakeTextArea.innerText.trim().length == 0) {
+      showBanner("Empty note!", "error");
+      return;
+    }
+
     // save new note
     if (noteInfo[0] == "new") {
       // dont let new empty note get submitted
-      if (!fakeTextArea.innerText) {
-        showBanner("Empty note!", "error");
-        return;
-      }
+
       const newNote = noteObject.addNewNote(
         noteInfo[1],
         fakeTextArea.innerHTML,
@@ -231,6 +234,17 @@ window.onload = function () {
     showHideEditListDiv("none", "block");
     // noteEditSection.style.display = "none";
     // noteListSection.style.display = "block";
+  });
+
+  //if tab is pressed in note edit field
+  fakeTextArea.addEventListener("keydown", (e) => {
+    console.log(e.key);
+    if (e.keyCode == 9) {
+      e.preventDefault();
+      //add tab
+      document.execCommand("insertHTML", false, "&#009");
+      //prevent focusing on next element
+    }
   });
 
   // note actions
@@ -376,14 +390,20 @@ function getSelectedText() {
   return selectedText.toString();
 }
 
+// show hide note list or edit note page
 function showHideEditListDiv(editDiv, listDiv) {
   const noteListSection = document.getElementById("note-list-section");
   const noteEditSection = document.getElementById("note-edit-section");
   const loadingGif = document.getElementById("loading");
+  const fakeTextArea = document.getElementById("fake-textarea");
+
   loadingGif.style.display = "flex";
   setTimeout(() => {
     noteEditSection.style.display = editDiv;
     noteListSection.style.display = listDiv;
     loadingGif.style.display = "none";
+    if (editDiv == "block") {
+      fakeTextArea.focus();
+    }
   }, 300);
 }
