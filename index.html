@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar">
+      <div class="logoHeading">
+        <!-- logo -->
+        <h1 class="pageHeading pd-h-10">DN Notepad App</h1>
+      </div>
+    </nav>
+    <section class="section">
+      
+        
+      <div class="noteListSection" id="note-list-section">
+        <div class="noteListOptions pd-10">
+          <button class="btn mv-auto" id="createBtn">
+            + Create Note
+          </button>
+        </div>
+        <div class="noteList pd-10">
+          <ul class="noteListUL" id="note-list-ul">
+            <!-- <li>
+              <div class="noteHeader pd-10">
+                <div class="title">Note 3</div>
+                <div class="edit">
+                  <i class="fa-regular fa-pen-to-square" id="note-list-edit"></i>
+                </div>
+                <div class="delete">
+                  <i class="fa-regular fa-trash-can" id="note-list-delete"></i>
+                </div>
+              </div>
+              <div class="noteDesc pd-10">
+                Here is the description for note 3
+              </div>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+      
+      <div class="noteEditSection" id="note-edit-section" style="display: none;">
+        <div class="noteEditOptions pd-10">
+          <div class="noteEditOption">
+            <span>
+              <a id="all-notes-link" class="dv-unvisited-link" style="text-decoration: underline;">All Notes</a> 
+            </span> /
+            <span id="note-title-in-list">Note Title</span>
+          </div>
+        </div>
+        <div class="noteBody" id="1">
+          <div class="noteEditBodyAction pd-10">
+            <div class="noteEditAction">
+              <button class="btn" id="note-save-btn" title="Save">
+                <i class="fa-solid fa-floppy-disk"></i>
+              </button>
+            </div>
+            <div class="noteEditAction">
+              <button class="btn" id="underline-text" title="Underline text">
+                <i class="fa-solid fa-underline"></i>
+              </button>
+            </div>
+            <div class="noteEditAction">
+              <button class="btn" id="italic-text" title="Italic text">
+                <i class="fa-solid fa-italic"></i>
+              </button>
+            </div>
+            <div class="noteEditAction">
+              <button class="btn" id="bold-text" title="Bold text">
+                <i class="fa-solid fa-bold"></i>
+              </button>
+            </div>
+            <div class="noteEditAction">
+              <button class="btn" id="copy-text" title="Copy text">
+                <i class="fa-solid fa-copy"></i>
+              </button>
+            </div>
+            <div class="noteEditAction">
+              <button class="btn" id="delete-note-btn" title="Delete note">
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
+            <div class="noteEditAction" id="bannerMessage">
+            </div>
+          </div>
+          <div class="noteEditBodyTextArea pd-h-10 pt-10">
+            <div id='fake-textarea' contenteditable="true">
+              
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

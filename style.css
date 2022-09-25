@@ -1,0 +1,225 @@
+:root{
+  --light-yellow2: #F5F0BB;
+  --light-green2: #C4DFAA;
+  --light-green3: #90C8AC;
+  --light-green-complement: #6b9480;
+  --light-cyan2: #73A9AD;
+  --light-note1: #e4f9e0;
+  --light-note2: #cbf1c4
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.mr-10{
+  margin-right: 10px;
+}
+
+.ml-10{
+  margin-left: 10px;
+}
+
+.mt-10{
+  margin-top: 10px;
+}
+
+.mv-auto{
+  margin: auto 0;
+}
+
+.mb-10{
+  margin-bottom: 10px;
+}
+
+.pd-10{
+  padding: 10px;
+}
+
+.pt-10{
+  padding-top: 10px;
+}
+
+.pd-h-10{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.pd-v-10{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.dv-unvisited-link{
+  color: inherit !important;
+  text-decoration: none;
+}
+
+.dv-unvisited-link:hover{
+  cursor: pointer;
+  transition: box-shadow .2s ease-out;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.34);
+}
+
+.btn{
+  margin: auto 0;
+  padding: 5px;
+  height: 40px;
+  font-weight: 700;
+  font-size: large;
+  background-color: var(--light-cyan2);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+.btn:hover{
+  box-shadow: rgba(0, 0, 0, 0.34) 0px 3px 8px;
+  cursor: pointer;
+  transition: box-shadow .2s ease-out;
+}
+
+.btn:active{
+  box-shadow: rgba(0, 0, 0, 0.44) 0px 3px 8px;
+  cursor: pointer;
+  transition: box-shadow 1s ease-out;
+}
+
+.noteHeader i:hover{
+  font-weight: 1000;
+  cursor: pointer;
+  transition: font-weight 1s ease-out;
+}
+
+body{
+  box-sizing: border-box;
+  
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  max-width: 1100px;
+  min-width: 400px;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.container{
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.navbar{
+  color: #fff;
+  background-color: var(--light-cyan2);
+  height: 50px;
+}
+
+.logoHeading{
+  display: flex;
+  gap: 1.2rem;
+  height: 100%;
+  margin: auto 0;
+}
+
+.pageHeading{
+  margin: auto 0;
+}
+
+.noteListOptions{
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+
+.noteListUL{
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.noteListUL li{
+  background-color: var(--light-note1);
+  /* min-width: 200px; */
+}
+
+.noteHeader{
+  background-color: var(--light-note2);
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr;
+  font-size: large;
+}
+
+.noteHeader .edit, .noteHeader .delete{
+  margin-left: auto;
+}
+
+.noteDesc {
+  min-height: 200px;
+  max-height: 220px;
+  word-wrap: normal;
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
+}
+
+.noteEditOptions{
+  color: #fff;
+  font-size: x-large;
+  background-color: var(--light-green3);
+}
+
+.noteEditOptions .noteActionOption{
+  margin-left: 10px;
+}
+
+.noteActionOption{
+  width: 100%;
+}
+
+.noteActionOption .btn{
+  width: 100px;
+}
+
+.noteEditBodyAction{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.noteEditBodyAction .btn{
+  width: 50px;
+}
+
+.noteEditBodyTextArea #fake-textarea{
+  outline: 0px solid transparent;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  height: 200px;
+  text-overflow: clip;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+.noteEditBodyTextArea #fake-textarea:focus{
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+  transition: box-shadow ;
+}
+
+#bannerMessage{
+  text-align: center;
+  margin: auto 0;
+  font-weight: 700;
+}
+
+@media (max-width:1100px) {
+  .noteListUL{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .noteHeader{
+    height: 40px;
+  }
+}
