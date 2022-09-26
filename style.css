@@ -208,6 +208,7 @@ body{
 .noteEditBodyTextArea #fake-textarea{
   outline: 0px solid transparent;
   border: 1px solid #aaa;
+  background-color: #fff;
   border-radius: 5px;
   height: 200px;
   text-overflow: clip;

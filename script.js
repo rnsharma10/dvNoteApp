@@ -7,22 +7,16 @@ const actionMap = {
 
 const noteObject = {
   //keeping track of id to generate new id
-  latestId: 2,
+  latestId: 1,
   noteList: [
     {
       id: "1",
-      title: "Note 1",
+      title: getCurrentTime(),
       lastModified: new Date(),
-      content: "Write your own text, <br>select and format, copy or delete...",
+      content:
+        "- Write your note<div>- select and format</div><div>- copy whole note text/selected text or</div><div>- delete note...</div>",
       unFormattedContent:
-        "Write your own text, select and format, copy or delete...",
-    },
-    {
-      id: "2",
-      title: "Note 2",
-      lastModified: new Date(),
-      content: "Second note",
-      unFormattedContent: "Second note",
+        "- Write your note, \n- select and format, \n- copy whole note text/selected text or \n- delete note...",
     },
   ],
 
