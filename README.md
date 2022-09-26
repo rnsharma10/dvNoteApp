@@ -16,6 +16,8 @@ Responsive design quick note app with text formatting on notes.
  - Create, Update and Delete notes.
  - Format notes with bold, italic and underline function.
  - Copy data by selecting some text, or copy whole note.
+ - Notes are sorted in the last updated manner.
+
 
 ## Caveats
 
